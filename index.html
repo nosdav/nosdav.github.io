@@ -1,110 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nosdav - Nostr Distributed Authoring and Versioning</title>
+    <title>Nosdav</title>
     <style>
       body {
-        background-color: #f3f3f3;
-        font-family: Arial, sans-serif;
+        font-family: sans-serif;
         margin: 0;
         padding: 0;
       }
-
-      #container {
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 0;
+      }
+      .app-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-gap: 20px;
+        justify-items: center;
+      }
+      .app {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        height: 100vh;
+        text-align: center;
       }
-
-      #title {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #353535;
-        margin-bottom: 1rem;
-      }
-
-      #subtext {
-        font-size: 1.25rem;
-        color: #353535;
-        margin-bottom: 2rem;
-      }
-
-      a {
-        color: #005792;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      #links {
+      .app-icon {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #f2f2f2;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 50%;
+        align-items: center;
+        justify-content: center;
       }
-
-      .button {
-        background-color: #005792;
-        color: #ffffff;
+      .app-icon img {
+        max-width: 80%;
+        max-height: 80%;
+      }
+      .app-name {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .app-description {
+        margin-top: 5px;
+      }
+      .app-link {
+        margin-top: 10px;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
         border: none;
-        border-radius: 5px;
-        padding: 1rem;
-        font-size: 1rem;
+        border-radius: 4px;
         cursor: pointer;
-        transition: background-color 0.3s;
+      }
+      .app-link:hover {
+        background-color: #3e8e41;
+      }
+      /* styles for the body and container are omitted for brevity */
+      .footer {
+        background-color: #f2f2f2;
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+      }
+      .footer a {
+        color: #4caf50;
+        text-decoration: none;
+        margin: 0 5px;
+      }
+      .footer a:hover {
+        color: #3e8e41;
       }
 
-      .button:hover {
-        background-color: #003a5f;
+      /* styles for the body and container are omitted for brevity */
+      .navbar {
+        background-color: #333;
+        overflow: hidden;
+      }
+      .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .navbar a.active {
+        background-color: #333;
+        color: white;
       }
     </style>
   </head>
   <body>
-    <div id="container">
-      <h1 id="title">NosDAV</h1>
-      <p id="subtext">Nostr Distributed Authoring and Versioning</p>
-      <p>
-        | <a target="_blank" href="/pastebin/"
-          >Try Pastebin App</a
-        >
-        |
-        <a target="_blank" href="/bookmarks/"
-          >Try Bookmark App</a
-        >
-        |
-        <br />
-        <br />
-      </p>
+    <div class="navbar">
+      <a class="active" href="#">Nosdav</a>
+    </div>
 
-      <div id="links">
-        <a href="/spec" target="_blank" class="button"
-          >Spec</a
-        >
+    <div class="container">
+      <h2>Nostr Distributed Authoring and Versioning</h2>
+
+      <p>Nosdav is cloud storage solution for nostr</p>
+
+      <div class="app-grid">
+        <div class="app">
+          <div class="app-icon">
+            <img
+              src="https://images.unsplash.com/photo-1532139677426-43f0bedd6c1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+              alt="App icon"
+            />
+          </div>
+          <div class="app-name">Bookmarks</div>
+          <div class="app-description">A bookmark app.</div>
+          <a href="/bookmarks/"><button class="app-link">Try App</button></a>
+        </div>
+        <div class="app">
+          <div class="app-icon">
+            <img
+              src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1973&q=80"
+              alt="App icon"
+            />
+          </div>
+          <div class="app-name">Pastebin</div>
+          <div class="app-description">A pastebin app.</div>
+          <a href="/pastebin/"><button class="app-link">Try App</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a class="footer-link" href="/">Nosdav</a>|
+        <a class="footer-link" href="/spec/">Spec</a>|
+        <a class="footer-link" href="/server/">Server</a>|
+        <a class="footer-link" href="/apps/">Apps</a>|
         <a
-          href="/server"
           target="_blank"
-          class="button"
-          >Server</a
-        >
-        <a
-          href="/apps/"
-          target="_blank"
-          class="button"
-          >App Store</a
-        >
-        <a
-          href="/nosdav"
-          target="_blank"
-          class="button"
-          >Library</a
+          class="footer-link"
+          href="https://github.com/nosdav/nosdav.github.io/"
+          >Github</a
         >
       </div>
+      <div>Nosdav &copy; 2023</div>
     </div>
   </body>
 </html>
