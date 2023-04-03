@@ -21,9 +21,9 @@
 [![npm](https://img.shields.io/npm/dw/nosdav.com.svg)](https://npmjs.com/package/nosdav.com)
 [![Github Stars](https://img.shields.io/github/stars/nosdav/nosdav.com.svg)](https://github.com/nosdav/nosdav.com/)
 
-## Introduction
+## About
 
-nosdav.com
+Contains the code for the site at [nosdav.com](https://nosdav.com/)
 
 ## License
 
