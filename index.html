@@ -4,86 +4,130 @@
     <meta charset="UTF-8" />
     <title>Nosdav</title>
     <style>
+      :root {
+        --primary-color: hsla(191, 100%, 97%, 0);
+        --secondary-color: #3e8e41;
+        --background-color: #f9f9f9;
+        --navbar-color: #333;
+        --text-color: #333;
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --border-radius: 8px;
+      }
+
       body {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
       }
+
       .container {
-        max-width: 800px;
+        max-width: 900px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 40px;
         text-align: center;
       }
-      h1 {
+
+      h1,
+      h2 {
         text-align: center;
         margin-top: 0;
+        font-weight: 600;
       }
+
+      p {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
       .app-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 40px;
         justify-items: center;
       }
+
       .app {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        background-color: #fff;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        padding: 30px;
       }
+
       .app-icon {
         width: 100px;
         height: 100px;
         border-radius: 50%;
-        background-color: #f2f2f2;
+        background-color: var(--primary-color);
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 10px;
       }
+
       .app-icon img {
         max-width: 80%;
         max-height: 80%;
       }
+
       .app-name {
         font-weight: bold;
         margin-top: 10px;
+        font-size: 1.2rem;
       }
+
       .app-description {
         margin-top: 5px;
+        font-size: 0.9rem;
       }
+
       .app-link {
         margin-top: 10px;
-        background-color: #4caf50;
+        background-color: var(--primary-color);
         color: white;
         padding: 10px;
         border: none;
-        border-radius: 4px;
+        border-radius: var(--border-radius);
         cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        background-color: var(--secondary-color);
       }
+
       .app-link:hover {
-        background-color: #3e8e41;
+        background-color: var(--secondary-color);
       }
-      /* styles for the body and container are omitted for brevity */
+
       .footer {
         background-color: #f2f2f2;
         padding: 10px;
         font-size: 14px;
         text-align: center;
       }
+
       .footer a {
-        color: #4caf50;
+        color: var(--primary-color);
         text-decoration: none;
         margin: 0 5px;
-      }
-      .footer a:hover {
-        color: #3e8e41;
+        color: var(--secondary-color);
       }
 
-      /* styles for the body and container are omitted for brevity */
-      .navbar {
-        background-color: #333;
-        overflow: hidden;
+      .footer a:hover {
+        color: var(--secondary-color);
       }
+
+      .navbar {
+        background-color: var(--navbar-color);
+        overflow: hidden;
+        padding: 0.5rem 1rem;
+      }
+
       .navbar a {
         float: left;
         display: block;
@@ -93,12 +137,14 @@
         text-decoration: none;
         font-size: 17px;
       }
+
       .navbar a:hover {
         background-color: #ddd;
         color: black;
       }
+
       .navbar a.active {
-        background-color: #333;
+        background-color: var(--navbar-color);
         color: white;
       }
     </style>
@@ -109,9 +155,13 @@
     </div>
 
     <div class="container">
-      <h2>Nostr Distributed Authoring and Versioning</h2>
+      <h1>Nostr Distributed Authoring and Versioning</h1>
 
-      <p>Nosdav is cloud storage solution for nostr.</p>
+      <p>
+        Nosdav is a cloud-based storage solution that can greatly enhance the
+        efficiency and reliability of Nostr by providing a reliable and scalable
+        storage infrastructure. Try our apps or explore the links beneath.
+      </p>
 
       <div class="app-grid">
         <div class="app">
@@ -120,7 +170,7 @@
           </div>
           <div class="app-name">Bookmarks</div>
           <div class="app-description">A bookmark app.</div>
-          <a href="/bookmarks/"><button class="app-link">Try App</button></a>
+          <a href="/bookmarks/" class="app-link">Try App</a>
         </div>
         <div class="app">
           <div class="app-icon">
@@ -128,7 +178,7 @@
           </div>
           <div class="app-name">Pastebin</div>
           <div class="app-description">A pastebin app.</div>
-          <a href="/pastebin/"><button class="app-link">Try App</button></a>
+          <a href="/pastebin/" class="app-link">Try App</a>
         </div>
         <div class="app">
           <div class="app-icon">
@@ -136,9 +186,7 @@
           </div>
           <div class="app-name">Mind Map</div>
           <div class="app-description">Mind Mapping.</div>
-          <a href="/my-mind/login.html"
-            ><button class="app-link">Go To App</button></a
-          >
+          <a href="/my-mind/login.html" class="app-link">Go To App</a>
         </div>
       </div>
     </div>
