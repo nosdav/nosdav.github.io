@@ -1,6 +1,6 @@
 {
   "name": "nosdav.com",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "nosdav.com",
   "main": "index.js",
   "scripts": {
